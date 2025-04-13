@@ -5,12 +5,20 @@ class parameters:
     # 1\原始数据
     source_data_path = os.path.join(os.path.abspath(os.getcwd()), "data")    # 原始数据路径
     sql_db_path = os.path.join(os.path.abspath(os.getcwd()), "data_handle", "dataset") # 数据库路径
-    sql_table_name = "data1"    # 数据表名称
+    sql_data_name = "data1"    # 数据库名称
 
+
+
+    sql_table_name = "data1_sentence"    # 数据表名称
     split_language = "zh"    # 分割语言：zh or en
     split_mode = "sentence"  # 分割方法：sentence or paragraph
     split_chunk_size = 100   # 句子长度
     split_chunk_overlap = 20  # 句子重叠长度
+
+    sql_paragraph_table_name = "data1_paragraph"    # 段落表名称
+    is_split_paragraph = True   # 是否分割段落
+    paragraph_chunk_size = 512  # 段落长度
+    paragraph_chunk_overlap = 30  # 段落重叠长度
 
 
     # 2\知识库
