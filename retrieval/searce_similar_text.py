@@ -13,9 +13,10 @@ class SearchSimilarText:
 
         self.LanceDBManager = LanceDBManager(self.LanceDB_path)
 
-    def simple_searce(self, query_vector: List[float], table_name: str, topk: int = None):
+    def simple_searce(self, query_vector: List[float], table_name: str, topk: int = None,  filter_expression: str = None):
         if topk is None:
             topk = self.topk
         return self.LanceDBManager.search_vectors(table_name=table_name,
                                            query_vector=query_vector,
-                                           limit=topk)
+                                           limit=topk,
+                                           filter_expression=filter_expression)

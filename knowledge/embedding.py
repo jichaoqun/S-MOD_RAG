@@ -30,4 +30,5 @@ class EmbeddingSourceDate:
         return embedding_list
     def embedding_single(self, sentence):
         """Return the embedding of the sentence."""
+        # 使用模型对句子进行编码，返回句子的嵌入表示
         return self.model.encode(sentence)

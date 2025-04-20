@@ -19,9 +19,14 @@ def generate_prompt(question, retrieved_data):
     
     return prompt
 
-def generate_ollama(question, knowledge=None, model="qwen2.5:0.5b", stream=False):
+def generate_ollama(question, knowledge=None):
 
-    client = ollama.Client(parameters.host_port)
+    try:
+        client = ollama.Client(parameters.host_port)
+    except Exception as e:
+        print("Exception occurred: ", type(e).__name__)
+        print("Exception message: ", str(e))
+        client = ollama.Client("http://localhost:11434")
 
     promapt = f"问题：{question}\n知识：{knowledge}\n回答："
     promapt = {"system": "你是一个AI助手，擅长基于知识库回答问题。",

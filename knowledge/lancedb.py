@@ -140,7 +140,7 @@ class LanceDBManager:
         # table.create_index(metric=metric)
         
         # 构建搜索查询
-        search_query = table.search(query_vector, vector_column_name="vector").limit(limit).offset(offset)
+        search_query = table.search(query_vector, vector_column_name="vector", query_type="vector").limit(limit).offset(offset)
         
         # 如果有过滤条件，添加到查询中
         if filter_expression:

@@ -36,7 +36,7 @@ class parameters:
 
     # 4\生成器
     use_type= "ollama"
-    host_port = "http://0.0.0.0:11434"
+    host_port = "http://127.0.0.1:11434"
     llm_model= "qwen2.5:0.5b"
     temperature= 0.95
 
